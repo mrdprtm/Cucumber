@@ -32,6 +32,9 @@ public class LoginPage {
     @FindBy(xpath = "//div[@class='orangehrm-login-slot-wrapper']//div[1]//div[1]//span[1]")
     WebElement txtRequired;
 
+    @FindBy(xpath = "//h6[@class='oxd-text oxd-text--h6 oxd-topbar-header-breadcrumb-module']")
+    WebElement txtDashboard;
+
     public void login(String username, String password){
         this.username.sendKeys(username);
         this.password.sendKeys(password);
@@ -51,6 +54,10 @@ public class LoginPage {
     
     public String getTxtRequired(){
         return txtRequired.getText();
+    }
+
+    public String getTxtDashboard() {
+    	return txtDashboard.getText();
     }
 
 }
